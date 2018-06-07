@@ -1,11 +1,10 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class ActiveCamoRenderer : MonoBehaviour {
 
 	private Renderer thisRenderer;
-	public Material ActiveCamoMaterial;
+	[SerializeField]
+	private Material ActiveCamoMaterial;
 	private MaterialPropertyBlock MPB;
 	private ActiveCamoObject acObject;
 	[HideInInspector]
@@ -18,11 +17,6 @@ public class ActiveCamoRenderer : MonoBehaviour {
 		acObject.renderer = thisRenderer;
 		acObject.material = ActiveCamoMaterial;
 	}
-
-	// use if rebuilding command buffer every frame
-	//void OnWillRenderObject(){
-	//	ActiveCamoCommandBuffer.instance.AddRenderer (acObject);
-	//}
 
 	void OnBecameVisible(){
 		ActiveCamoCommandBuffer.instance.AddRenderer (acObject);

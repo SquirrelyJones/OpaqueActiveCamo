@@ -6,8 +6,8 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: Head_UnlitCamo
-  m_Shader: {fileID: 4800000, guid: a7a0a0e9c39b5f344916bf2102522589, type: 3}
+  m_Name: Soldier_UnlitCamoSimple
+  m_Shader: {fileID: 4800000, guid: 26498923586b49c45a066ab64ab44b17, type: 3}
   m_ShaderKeywords: _USE_UV2
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -55,7 +55,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 619d47eac7878834db952b64799cbd5c, type: 3}
+        m_Texture: {fileID: 2800000, guid: aa3cf244c8a7f1447b78490941283806, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
@@ -63,11 +63,11 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicTex:
-        m_Texture: {fileID: 2800000, guid: 2dce7bee1887abf4ea6c1f2f73ca1a03, type: 3}
+        m_Texture: {fileID: 2800000, guid: 383d1f0bf7f3217438418da2d179a816, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _NormalTex:
-        m_Texture: {fileID: 2800000, guid: d4f469a285097cf48b5c8eacad32ed8d, type: 3}
+        m_Texture: {fileID: 2800000, guid: 6717c643d812cd740854cbd5922079f1, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _OcclusionMap:
@@ -79,11 +79,11 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _RampTex:
-        m_Texture: {fileID: 2800000, guid: 7ccfad43e17c3874fa841ff16ac93f1a, type: 3}
+        m_Texture: {fileID: 2800000, guid: e50d8eb60a41a9b4cb7b8b06f3f2f143, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _SmoothnessTex:
-        m_Texture: {fileID: 2800000, guid: 02a9f06c84a7a02459bf9826143213fb, type: 3}
+        m_Texture: {fileID: 2800000, guid: e0c0cf86391e4ab4584d0faf58ea5ec3, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
@@ -114,8 +114,8 @@ Material:
     m_Colors:
     - _ActiveCamoSmear: {r: 0, g: 0, b: 0, a: 0}
     - _Color: {r: 0.588, g: 0.588, b: 0.588, a: 1}
-    - _DistortTexTiling: {r: 1, g: 1, b: 0.01, a: 0.01}
+    - _DistortTexTiling: {r: 2, g: 2, b: 0.05, a: 0.05}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 0}
-    - _FXTexTiling: {r: 3.5, g: 3.5, b: 0, a: 0}
+    - _FXTexTiling: {r: 14, g: 14, b: 0, a: 0}
     - _GlowColor: {r: 1, g: 0.5185599, b: 0.25735295, a: 1}
     - _HexColor: {r: 0.16911763, g: 0.65618664, b: 1, a: 1}

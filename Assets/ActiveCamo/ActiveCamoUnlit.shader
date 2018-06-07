@@ -19,6 +19,8 @@
 		_DistortTexTiling ("Distortion Tiling", Vector) = (1,1,0,0)
 		_DistortAmount ("Distortion Amount", Range(0,1)) = 0.1
 		_VertDistortAmount ("Vert Distortion Amount", Range(0,1)) = 0.1
+		_NormalBlend ("Vertex / Pixel Normal Blend", Range(0,1)) = 1.0
+		_DiffusionAmount ("Diffusion Amount", Range(0,1)) = 0.1
 		_ActiveCamo ("Active Camo", Range(0,1)) = 0.0
 		_ActiveCamoSmear ("Active Camo Smear", Vector) = (0,0,0,0)
 
@@ -26,7 +28,7 @@
 	}
 	SubShader
 	{
-		Tags { "RenderType"="Transparent" "Queue"="Transparent-10" }
+		Tags { "RenderType"="Transparent" "Queue"="Transparent" }
 		LOD 100
 
 		Pass
@@ -69,6 +71,10 @@
 			float4 _DistortTexTiling;
 			float _DistortAmount;
 			float _VertDistortAmount;
+
+			float _NormalBlend;
+
+			float _DiffusionAmount;
 			float _ActiveCamo;
 			float4 _ActiveCamoSmear;
 			float _ActiveCamoRamp;
@@ -103,6 +109,12 @@
 
 				return o;
 			}
+
+			float2 noise( float2 seed ){
+				float val1 = sin( dot( seed.xy, float2(3737.247, 5712.178)) * 2458.245 );
+				float val2 = sin( dot( seed.yx, float2(8365.840, 3156.861)) * 4637.840 );
+				return float2( val1, val2 );
+			}
 			
 			fixed4 frag (v2f IN) : SV_Target
 			{
@@ -116,6 +128,9 @@
 				worldNormal.y = dot(IN.tSpace1.xyz, localNormal.xyz);
 				worldNormal.z = dot(IN.tSpace2.xyz, localNormal.xyz);
 				worldNormal = normalize( worldNormal );
+
+				half2 screenNormal = mul( (float3x3)UNITY_MATRIX_V, worldNormal ).xy;
+				screenNormal = lerp( IN.screenNormal.xy, screenNormal, _NormalBlend );
 
 				// get world position and view vector and calculate fresnel for effect
 				float3 worldPos = float3( IN.tSpace0.w, IN.tSpace1.w, IN.tSpace2.w );
@@ -147,18 +162,22 @@
 				half4 fxFlicker = half4( _HexColor.xyz * lutFlicker.w * fxMap.y * lutHex.z * 0.2, 0 );
 
 				// the final amound of active camo to apply
-				half activeCamo = _ActiveCamo * _GlobalActiveCamo * fresnel * lutHex.z;// * (1.0 - lutFlicker.w * fxMap.y);
+				half activeCamo = _ActiveCamo * _GlobalActiveCamo * fresnel * lutHex.z;
 
+				// get the last frame to use as camo
 				float2 screenUV = IN.screenPos.xy / IN.screenPos.w;
 				screenUV += _ActiveCamoSmear.xy * 0.1;
 				screenUV += distortion * _DistortAmount * 0.1;
-				screenUV += IN.screenNormal.xy * _VertDistortAmount * 0.1;
+				screenUV += screenNormal * _VertDistortAmount * 0.1;
+				float deadZone = 1.0 - length( screenNormal );
+				screenUV += pow(deadZone, 3.0 ) * noise( IN.screenPos.xy + _SinTime.ww ) * _DiffusionAmount * 0.1;
 				half3 lastFrame = tex2D (_LastFrame, screenUV).xyz;
 
 				// premultiplied alpha camo
 				half4 camo = half4( lastFrame * activeCamo, activeCamo);
 
 				half4 final = camo + fxGlow + fxHex + fxFlicker;
+				final.w = saturate( final.w);
 
 				return final;
 			}

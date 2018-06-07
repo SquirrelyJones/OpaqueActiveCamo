@@ -6,8 +6,8 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: Head_UnlitCamo
-  m_Shader: {fileID: 4800000, guid: a7a0a0e9c39b5f344916bf2102522589, type: 3}
+  m_Name: Gun_UnlitCamoSimple
+  m_Shader: {fileID: 4800000, guid: 26498923586b49c45a066ab64ab44b17, type: 3}
   m_ShaderKeywords: _USE_UV2
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -55,7 +55,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 619d47eac7878834db952b64799cbd5c, type: 3}
+        m_Texture: {fileID: 2800000, guid: 913f3c2811353a64ea28d19c72e612d7, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
@@ -63,11 +63,11 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicTex:
-        m_Texture: {fileID: 2800000, guid: 2dce7bee1887abf4ea6c1f2f73ca1a03, type: 3}
+        m_Texture: {fileID: 2800000, guid: ee0ef9f2247317c4f8481e1691bcae15, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _NormalTex:
-        m_Texture: {fileID: 2800000, guid: d4f469a285097cf48b5c8eacad32ed8d, type: 3}
+        m_Texture: {fileID: 2800000, guid: a6cf114cfdc6a7541bdbb1a6414f3dfd, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _OcclusionMap:
@@ -79,11 +79,11 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _RampTex:
-        m_Texture: {fileID: 2800000, guid: 7ccfad43e17c3874fa841ff16ac93f1a, type: 3}
+        m_Texture: {fileID: 2800000, guid: 94673cb64a324c442a3c9c834d455731, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _SmoothnessTex:
-        m_Texture: {fileID: 2800000, guid: 02a9f06c84a7a02459bf9826143213fb, type: 3}
+        m_Texture: {fileID: 2800000, guid: a596909ca36abe94c97402e82286a1d3, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:

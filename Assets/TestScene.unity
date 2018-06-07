@@ -124,6 +124,7 @@ GameObject:
   - component: {fileID: 43221812}
   - component: {fileID: 43221811}
   - component: {fileID: 43221815}
+  - component: {fileID: 43221816}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -205,8 +206,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rbDrawACQueue: 11
+--- !u!114 &43221816
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 43221810}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad9edd3338cb7e14585a16fe594915a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   rbFrameQueue: 17
-  lastFrame: {fileID: 1720069061}
+  lastFrame: {fileID: 1035160688}
   lastFrameTemp: {fileID: 0}
 --- !u!1 &270584081
 GameObject:
@@ -495,6 +507,33 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!84 &1035160688
+RenderTexture:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: 
+  m_ImageContentsHash:
+    serializedVersion: 2
+    Hash: 00000000000000000000000000000000
+  m_Width: 846
+  m_Height: 463
+  m_AntiAliasing: 1
+  m_DepthFormat: 0
+  m_ColorFormat: 9
+  m_MipMap: 0
+  m_GenerateMips: 1
+  m_SRGB: 0
+  m_TextureSettings:
+    serializedVersion: 2
+    m_FilterMode: 1
+    m_Aniso: 1
+    m_MipBias: 0
+    m_WrapU: 1
+    m_WrapV: 1
+    m_WrapW: 1
+  m_Dimension: 2
+  m_VolumeDepth: 1
 --- !u!1 &1128262644 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 100000, guid: e9c6b25fb2654a34e9e4a741d5a24c79, type: 3}
@@ -510,7 +549,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa6083b01604cd24595d673a2497ad84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ActiveCamoMaterial: {fileID: 2100000, guid: 33b9c695aa67f6d44ab94a2a924e3e4c, type: 2}
+  ActiveCamoMaterial: {fileID: 2100000, guid: 892c7add89547d948ab2262bd9fd1598, type: 2}
   ActiveCamoRamp: 1
 --- !u!1001 &1177492872
 Prefab:
@@ -573,7 +612,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 100004, guid: e9c6b25fb2654a34e9e4a741d5a24c79, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e9c6b25fb2654a34e9e4a741d5a24c79, type: 3}
@@ -687,7 +726,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400004, guid: e9c6b25fb2654a34e9e4a741d5a24c79, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 1
+      value: -0.9867143
       objectReference: {fileID: 0}
     - target: {fileID: 400004, guid: e9c6b25fb2654a34e9e4a741d5a24c79, type: 3}
       propertyPath: m_LocalRotation.z
@@ -695,7 +734,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400004, guid: e9c6b25fb2654a34e9e4a741d5a24c79, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0
+      value: 0.16246499
       objectReference: {fileID: 0}
     - target: {fileID: 400004, guid: e9c6b25fb2654a34e9e4a741d5a24c79, type: 3}
       propertyPath: m_RootOrder
@@ -703,7 +742,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400004, guid: e9c6b25fb2654a34e9e4a741d5a24c79, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 180
+      value: -161.3
       objectReference: {fileID: 0}
     - target: {fileID: 100004, guid: e9c6b25fb2654a34e9e4a741d5a24c79, type: 3}
       propertyPath: m_Name
@@ -715,7 +754,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 100004, guid: e9c6b25fb2654a34e9e4a741d5a24c79, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e9c6b25fb2654a34e9e4a741d5a24c79, type: 3}
@@ -752,7 +791,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa6083b01604cd24595d673a2497ad84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ActiveCamoMaterial: {fileID: 2100000, guid: ecf9e92ba788e32448ea3ecaa8eb3f6f, type: 2}
+  ActiveCamoMaterial: {fileID: 2100000, guid: c3546fefb8280e04989a7759339782dc, type: 2}
   ActiveCamoRamp: 1
 --- !u!1 &1652951347
 GameObject:
@@ -811,35 +850,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa6083b01604cd24595d673a2497ad84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ActiveCamoMaterial: {fileID: 2100000, guid: 0241d441464894640bead261c6f34d6b, type: 2}
+  ActiveCamoMaterial: {fileID: 2100000, guid: b9dca68b3460223468c8097f862b930c, type: 2}
   ActiveCamoRamp: 1
---- !u!84 &1720069061
-RenderTexture:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_Name: 
-  m_ImageContentsHash:
-    serializedVersion: 2
-    Hash: 00000000000000000000000000000000
-  m_Width: 953
-  m_Height: 493
-  m_AntiAliasing: 1
-  m_DepthFormat: 0
-  m_ColorFormat: 9
-  m_MipMap: 0
-  m_GenerateMips: 1
-  m_SRGB: 0
-  m_TextureSettings:
-    serializedVersion: 2
-    m_FilterMode: 1
-    m_Aniso: 1
-    m_MipBias: 0
-    m_WrapU: 1
-    m_WrapV: 1
-    m_WrapW: 1
-  m_Dimension: 2
-  m_VolumeDepth: 1
 --- !u!1 &1720331868 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 100000, guid: e9c6b25fb2654a34e9e4a741d5a24c79, type: 3}
